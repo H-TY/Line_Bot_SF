@@ -3,7 +3,7 @@
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUc7tXUNLBIo2uPUCsLgVEUORCwQ1ZFoiwCcvk5nxrnwRC3kmaT_UC3IX9vSY6M3PI9ofXDiKwEtCqtbivGeyOG8RWHS1Vomu8tbwf1Kep6AQIRQ2EMyTZr5EQfRQfnwqaMSv1s2RWhMn6f0Yh9chHlIavZCuFRvpnK25OqtbPhsdNP57e-b&key=AIzaSyDUtOBN2dsukZ7upzHyEI9fhfHWUheSHzY",
+      "url": 
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
@@ -163,7 +163,7 @@
               "action": {
                 "type": "uri",
                 "label": "　更多資訊　",
-                "uri": "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJGftPv52nQjQR1600Ww7EUQ4"
+                "uri": 
               },
               "position": "absolute",
               "color": "#FFFFFF",
@@ -197,7 +197,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.044822,121.4262012",
+                "uri": 
                 "label": "　　　　　　Map　　　　　　"
               },
               "position": "absolute",
@@ -229,7 +229,7 @@
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUc7tXURzld5Xxb0R4dtAdHcimLmmS9QSdTGibkAp5bw79-Kr9ahedB7IDrhRofl62JtiBI-LisHveTmWrOhpU9EzRJvA3lFF2Yooriof4IVNkacuO-y4exRNddnWnC-hcfd2TX_tkUkuUIsa4K9yYJaEAKTKC6eRaNyOc3xHbuOtMN-1Mk&key=AIzaSyDUtOBN2dsukZ7upzHyEI9fhfHWUheSHzY",
+      "url": "
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
@@ -389,7 +389,7 @@
               "action": {
                 "type": "uri",
                 "label": "　更多資訊　",
-                "uri": "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJxc6HrgSlQjQRrI95YFmMv1s"
+                "uri": 
               },
               "position": "absolute",
               "color": "#FFFFFF",
@@ -423,7 +423,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0450903,121.4258008",
+                "uri":
                 "label": "　　　　　　Map　　　　　　"
               },
               "position": "absolute",
@@ -455,8 +455,7 @@
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUc7tXUgIunT8CP9i2Y14kuHJbEVfwRRjoDAo-PfcW_ZF0T6ElkBUuDQg-ivYjs3l8OczOT0zz6NfDtE22Do1rCmiUrOFUdTohIJrFuuTM9YO11cjpL4v3F_zfypzEPRTOiLoJojiwBQxPZcdlrqFylks05vH6EL2jMQMXAMxUSaio2153X7&key=AIzaSyDUtOBN2dsukZ7upzHyEI9fhfHWUheSHzY",
-      "size": "full",
+      "url":
       "aspectRatio": "20:13",
       "aspectMode": "cover",
       "action": {
@@ -615,7 +614,7 @@
               "action": {
                 "type": "uri",
                 "label": "　更多資訊　",
-                "uri": "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJV0Ir_8anQjQRtTqZowGnY2U"
+                "uri":
               },
               "position": "absolute",
               "color": "#FFFFFF",
@@ -649,7 +648,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0454841,121.4259006",
+                "uri":
                 "label": "　　　　　　Map　　　　　　"
               },
               "position": "absolute",
@@ -681,7 +680,7 @@
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUc7tXV0IPNJNYlBflzWT17bNdSvELdskKlTmZzd7wBz4Mg8ODIMXRB39C74lQgAYFXIsX-ZAHsWxOb7nhBn04MGQ66mFgCjgksT6wj4oLWVdRPrFOIrE7acnheAxL2dqTO0tK4HBcH05I_D45Mt7mgRxv7Rr_kjmHS-jj79sehIDCCZGOnG&key=AIzaSyDUtOBN2dsukZ7upzHyEI9fhfHWUheSHzY",
+      "url": 
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
@@ -841,7 +840,7 @@
               "action": {
                 "type": "uri",
                 "label": "　更多資訊　",
-                "uri": "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJD5F59e6nQjQRjehhW8gV_FE"
+                "uri": 
               },
               "position": "absolute",
               "color": "#FFFFFF",
@@ -875,7 +874,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0448392,121.4257283",
+                "uri": 
                 "label": "　　　　　　Map　　　　　　"
               },
               "position": "absolute",
@@ -907,7 +906,7 @@
     "type": "bubble",
     "hero": {
       "type": "image",
-      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=AUc7tXViP3GWnCiTeaZjys-LJO9fkxFk-SWYOPiZypLd0O50tcEbnipbLvz2fnfMSoV1l8bpwhXXXwZMu2c8vW38w1ByGrhU9znOCBjaI8NuDjC0KDqjrkvE3iobe7FCo6rR1CpesnAp3ksc3rRWLT_Qrk9RKR9Wk2afA3VTsKKtXGTAxk6G&key=AIzaSyDUtOBN2dsukZ7upzHyEI9fhfHWUheSHzY",
+      "url": 
       "size": "full",
       "aspectRatio": "20:13",
       "aspectMode": "cover",
@@ -1067,7 +1066,7 @@
               "action": {
                 "type": "uri",
                 "label": "　更多資訊　",
-                "uri": "https://www.google.com/maps/search/?api=1&query=Google&query_place_id=ChIJz78B78anQjQRZp9hd0jXBP8"
+                "uri":
               },
               "position": "absolute",
               "color": "#FFFFFF",
@@ -1101,7 +1100,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0446216,121.4265101",
+                "uri": 
                 "label": "　　　　　　Map　　　　　　"
               },
               "position": "absolute",
