@@ -1,0 +1,1127 @@
+[
+  {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AdCG2DOKwc08IsDoT3mMDnYU5JunZRTvg3Btm6-yZQ4SO6IY2HN64FGLiU1NLTOq45CFpX188aEoL3EDjnnL9j6JFyKMO9Curr0Ihoqtzu1mOhd3m0G0uo6eOS1DdXEQWDSfdjDmvxHvHzABAJFaroT5urwycOAzsM4svgIWvYBLR5xH9Drk&key=AIzaSyANAsUwN51p9nogL8tXWeSeA15m1GPZUJo",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "魔法咖哩 台北站前店",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "baseline",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "text",
+              "text": "4.5",
+              "size": "xxl",
+              "color": "#999999",
+              "margin": "lg",
+              "flex": 0,
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "營業時間",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "營業中",
+                  "color": "#00A600",
+                  "size": "sm",
+                  "flex": 1
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "地址",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "中正區許昌街30號2樓",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paddingBottom": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Call",
+                "uri": "tel:0223886298"
+              },
+              "color": "#FFFFFF",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "width": "130px",
+          "height": "44px",
+          "backgroundColor": "#808080",
+          "cornerRadius": "10px",
+          "borderColor": "#FF99CC",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "centerColor": "#ffb517",
+            "startColor": "#e66000",
+            "endColor": "#ffc20f"
+          },
+          "offsetBottom": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "　更多資訊　",
+                "uri": "https://maps.google.com/?cid=8165108587278240109"
+              },
+              "position": "absolute",
+              "color": "#FFFFFF",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#666666",
+            "endColor": "#FFFFFF",
+            "centerColor": "#CCCCCC",
+            "centerPosition": "100%"
+          },
+          "width": "130px",
+          "height": "44px",
+          "position": "absolute",
+          "backgroundColor": "#003366",
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "offsetEnd": "10px",
+          "offsetTop": "0px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0454166,121.5158347",
+                "label": "　　　　　　Map　　　　　　"
+              },
+              "position": "absolute",
+              "color": "#ffffff",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#339933",
+            "endColor": "#66CC00",
+            "centerColor": "#66CC00"
+          },
+          "width": "100%",
+          "height": "44px"
+        }
+      ],
+      "flex": 0,
+      "position": "relative",
+      "height": "115px"
+    }
+  },
+  {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AdCG2DPd2TRZo8QCMP8BUxf8RyrcHHlbZKL0VjRd5k9tgPAJ7Lzu6jr7_KsXOsM_oRfqZRip7JLlMnJTPvYno8_MQiMB90STM66QoSUhrnz7yo3Ov7efX2iUMOjmBDsOJ5MVuYCZmy2Gt9YADNL3yZWpVhGpgGk78Qglkhghte4H8Zj08X4n&key=AIzaSyANAsUwN51p9nogL8tXWeSeA15m1GPZUJo",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "君品酒店 Ciao by Fratelli Pennisi Macelleria Sicilia 西西里牛排餐酒館",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "baseline",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "text",
+              "text": "4.5",
+              "size": "xxl",
+              "color": "#999999",
+              "margin": "lg",
+              "flex": 0,
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "營業時間",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "營業中",
+                  "color": "#00A600",
+                  "size": "sm",
+                  "flex": 1
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "地址",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "大同區承德路一段3號6樓",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paddingBottom": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Call",
+                "uri": "tel:0975684833"
+              },
+              "color": "#FFFFFF",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "width": "130px",
+          "height": "44px",
+          "backgroundColor": "#808080",
+          "cornerRadius": "10px",
+          "borderColor": "#FF99CC",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "centerColor": "#ffb517",
+            "startColor": "#e66000",
+            "endColor": "#ffc20f"
+          },
+          "offsetBottom": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "　更多資訊　",
+                "uri": "https://maps.google.com/?cid=5141713374703786158"
+              },
+              "position": "absolute",
+              "color": "#FFFFFF",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#666666",
+            "endColor": "#FFFFFF",
+            "centerColor": "#CCCCCC",
+            "centerPosition": "100%"
+          },
+          "width": "130px",
+          "height": "44px",
+          "position": "absolute",
+          "backgroundColor": "#003366",
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "offsetEnd": "10px",
+          "offsetTop": "0px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0491433,121.5168672",
+                "label": "　　　　　　Map　　　　　　"
+              },
+              "position": "absolute",
+              "color": "#ffffff",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#339933",
+            "endColor": "#66CC00",
+            "centerColor": "#66CC00"
+          },
+          "width": "100%",
+          "height": "44px"
+        }
+      ],
+      "flex": 0,
+      "position": "relative",
+      "height": "115px"
+    }
+  },
+  {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AdCG2DOXdPaxf3GGEc9Fjt8OGC7GSoAVDXOyqTvrClPBXopsDawyBl_eZPMClH1oChfUtqlgD8S4kfTvsrpWBMoUBzwBLOj7eBMxG3l5gTMXgzjZOde6btvb64TxMTeaCbXjgk7lvBa_lQ0_FE5LM2DA1N06Ma1zVLp79c1DDL_GVoxBhBRz&key=AIzaSyANAsUwN51p9nogL8tXWeSeA15m1GPZUJo",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "君品酒店 - 頤宮中餐廳 Le Palais",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "baseline",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "text",
+              "text": "4.5",
+              "size": "xxl",
+              "color": "#999999",
+              "margin": "lg",
+              "flex": 0,
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "營業時間",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "營業中",
+                  "color": "#00A600",
+                  "size": "sm",
+                  "flex": 1
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "地址",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "大同區承德路一段3號17樓",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paddingBottom": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Call",
+                "uri": "tel:0221819950#"
+              },
+              "color": "#FFFFFF",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "width": "130px",
+          "height": "44px",
+          "backgroundColor": "#808080",
+          "cornerRadius": "10px",
+          "borderColor": "#FF99CC",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "centerColor": "#ffb517",
+            "startColor": "#e66000",
+            "endColor": "#ffc20f"
+          },
+          "offsetBottom": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "　更多資訊　",
+                "uri": "https://maps.google.com/?cid=10409924790036712938"
+              },
+              "position": "absolute",
+              "color": "#FFFFFF",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#666666",
+            "endColor": "#FFFFFF",
+            "centerColor": "#CCCCCC",
+            "centerPosition": "100%"
+          },
+          "width": "130px",
+          "height": "44px",
+          "position": "absolute",
+          "backgroundColor": "#003366",
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "offsetEnd": "10px",
+          "offsetTop": "0px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0491485,121.5168698",
+                "label": "　　　　　　Map　　　　　　"
+              },
+              "position": "absolute",
+              "color": "#ffffff",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#339933",
+            "endColor": "#66CC00",
+            "centerColor": "#66CC00"
+          },
+          "width": "100%",
+          "height": "44px"
+        }
+      ],
+      "flex": 0,
+      "position": "relative",
+      "height": "115px"
+    }
+  },
+  {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AdCG2DNeJz0vJUA-U5A7cCaay2zV0x-73e9i_XqbAIQlVC0excVT0Wi1ACblVgWlBChTy7vy_G1gkz1OKZq2AiYf5diw6QcS1haRr3HfGXQhg1bF7UXam2mK4SB6qllni3sYZIwCXMX3xPe3rJNBGhEll7bLB7TB--d4HHiHt8pxAhTIeVTv&key=AIzaSyANAsUwN51p9nogL8tXWeSeA15m1GPZUJo",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "太陽蕃茄拉麵 站前本店",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "baseline",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
+            },
+            {
+              "type": "text",
+              "text": "4.4",
+              "size": "xxl",
+              "color": "#999999",
+              "margin": "lg",
+              "flex": 0,
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "營業時間",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "營業中",
+                  "color": "#00A600",
+                  "size": "sm",
+                  "flex": 1
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "地址",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "中正區忠孝西路一段38號凱撤飯店B1F",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paddingBottom": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Call",
+                "uri": "tel:0223617188"
+              },
+              "color": "#FFFFFF",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "width": "130px",
+          "height": "44px",
+          "backgroundColor": "#808080",
+          "cornerRadius": "10px",
+          "borderColor": "#FF99CC",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "centerColor": "#ffb517",
+            "startColor": "#e66000",
+            "endColor": "#ffc20f"
+          },
+          "offsetBottom": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "　更多資訊　",
+                "uri": "https://maps.google.com/?cid=13970088452590531589"
+              },
+              "position": "absolute",
+              "color": "#FFFFFF",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#666666",
+            "endColor": "#FFFFFF",
+            "centerColor": "#CCCCCC",
+            "centerPosition": "100%"
+          },
+          "width": "130px",
+          "height": "44px",
+          "position": "absolute",
+          "backgroundColor": "#003366",
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "offsetEnd": "10px",
+          "offsetTop": "0px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0462341,121.5164145",
+                "label": "　　　　　　Map　　　　　　"
+              },
+              "position": "absolute",
+              "color": "#ffffff",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#339933",
+            "endColor": "#66CC00",
+            "centerColor": "#66CC00"
+          },
+          "width": "100%",
+          "height": "44px"
+        }
+      ],
+      "flex": 0,
+      "position": "relative",
+      "height": "115px"
+    }
+  },
+  {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=AdCG2DOETHTLzJf5BR7wIR8P6CJuM4ZK-ET3b77dHUzJ1TH8l4cAwCLF9A8iw29-Nk1bkHor2ZZbovkAiECMiTrxnAxLabW1KPE64ruchio7BgTN8uBj1sgG1IP-8J8Z19LIXzR7398iL_QDW5hpVUHGtdyR-e04OYG-sVqT3jR7YvgAtmAW&key=AIzaSyANAsUwN51p9nogL8tXWeSeA15m1GPZUJo",
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": "https://line.me/"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Mo-Mo-Paradise 台北京站牧場",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "baseline",
+          "margin": "sm",
+          "contents": [
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png"
+            },
+            {
+              "type": "icon",
+              "size": "sm",
+              "url": "https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png"
+            },
+            {
+              "type": "text",
+              "text": "4.4",
+              "size": "xxl",
+              "color": "#999999",
+              "margin": "lg",
+              "flex": 0,
+              "weight": "bold"
+            }
+          ]
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "營業時間",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "營業中",
+                  "color": "#00A600",
+                  "size": "sm",
+                  "flex": 1
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "地址",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "大同區承德路一段1號京站時尚廣場4樓",
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "paddingBottom": "20px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Call",
+                "uri": "tel:0225500889"
+              },
+              "color": "#FFFFFF",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "width": "130px",
+          "height": "44px",
+          "backgroundColor": "#808080",
+          "cornerRadius": "10px",
+          "borderColor": "#FF99CC",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "centerColor": "#ffb517",
+            "startColor": "#e66000",
+            "endColor": "#ffc20f"
+          },
+          "offsetBottom": "10px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "　更多資訊　",
+                "uri": "https://maps.google.com/?cid=5849156990987944525"
+              },
+              "position": "absolute",
+              "color": "#FFFFFF",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#666666",
+            "endColor": "#FFFFFF",
+            "centerColor": "#CCCCCC",
+            "centerPosition": "100%"
+          },
+          "width": "130px",
+          "height": "44px",
+          "position": "absolute",
+          "backgroundColor": "#003366",
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "offsetEnd": "10px",
+          "offsetTop": "0px"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/dir/?api=1&destination=25.0492679,121.5175664",
+                "label": "　　　　　　Map　　　　　　"
+              },
+              "position": "absolute",
+              "color": "#ffffff",
+              "style": "link",
+              "adjustMode": "shrink-to-fit"
+            }
+          ],
+          "cornerRadius": "10px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "background": {
+            "type": "linearGradient",
+            "angle": "0deg",
+            "startColor": "#339933",
+            "endColor": "#66CC00",
+            "centerColor": "#66CC00"
+          },
+          "width": "100%",
+          "height": "44px"
+        }
+      ],
+      "flex": 0,
+      "position": "relative",
+      "height": "115px"
+    }
+  }
+]

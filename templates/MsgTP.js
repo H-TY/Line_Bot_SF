@@ -53,7 +53,7 @@ export default () => {
               url: 'https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png'
             },
             {
-              type: 'text',
+              type: 'number',
               text: '4.0',
               size: 'xxl',
               color: '#999999',

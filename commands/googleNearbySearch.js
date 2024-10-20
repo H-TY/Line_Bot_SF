@@ -4,172 +4,188 @@ import { distance } from '../utils/distance.js'
 import template from '../templates/MsgTP.js'
 import fs from 'node:fs'
 
-// 我的google API
-const API_KEY = process.env.API_KEY
-
 // 搜索附近餐廳
 export default async (event) => {
   try {
-    // 使用者分享位置
-    const userLX = event.message.latitude
-    const userLY = event.message.longitude
+    const myAPI = process.env.API_KEY
 
-    // 若使用者未提供位置，提示告知！
-    if (!userLX || !userLY) {
-      return event.reply('請分享您目前的位置，以便進行搜尋!')
-    }
+    // 使用者分享位置（經緯度）
+    const userLat = event.message.latitude
+    const userLng = event.message.longitude
 
-    const response = await axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
+    // ● 搜尋附近店家
+    const { data } = await axios.get('https://maps.googleapis.com/maps/api/place/nearbysearch/json', {
       params: {
-        location: `${userLX},${userLY}`,
+        location: `${userLat},${userLng}`,
         // 搜尋半徑 500 公尺內
         radius: 500,
         type: 'restaurant',
-        key: API_KEY,
+        key: myAPI,
         language: 'zh-TW' // 指定語言為繁體中文
       }
     })
-    const RS = response.data.results
+    // console.log('data', data)
+    // console.log('data.results', data.results)
+    // console.log('data.results[0].geometry', data.results[0].geometry)
 
-    // 獲取所有的地點的詳細資訊
-    const detailPlace = await Promise.all(RS.map(async d => {
-      const detailsresponse = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
+    // ● 先排序星等高的在前面
+    // ● 再抓取前五名
+    const topFive = data.results
+      // 排序星等高的在前
+      .sort((a, b) => {
+        return b.rating - a.rating
+      })
+      // .slice(開始的索引位置, 結束的索引位置)，取陣列前5個，但不包含索引 5 對應的元素
+      .slice(0, 5)
+
+    // ● 再跟 google API 的 details 請求更詳細的資料
+    // 取出 topFive 的所有 place_id 變成一個新的陣列
+    const topFivePIs = topFive.map(tf => {
+      return tf.place_id
+    })
+    console.log('topFivePIs', topFivePIs)
+    console.log('topFivePIs[0]', topFivePIs[0])
+
+    // 預設空陣列，等一下要放資料的
+    const DMore = []
+
+    for (let i = 0; i < topFivePIs.length; i++) {
+      const Ddetails = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
         params: {
-          place_id: d.place_id,
-          // 請求返回哪些資料
-          fields: 'name,rating,photos,formatted_phone_number,opening_hours,formatted_address,business_status',
-          key: API_KEY,
-          language: 'zh-TW' // 指定語言為繁體中文
+          place_id: topFivePIs[i],
+          key: myAPI,
+          language: 'zh-TW'
         }
       })
+      // 將請求到的資料放置 DMore
+      DMore.push(Ddetails)
+    }
 
-      // ● 取用各資料
-      const Detail = detailsresponse.data.result
-      // console.log(Detail)
-
-      // 照片
-      d.photos = Detail ? Detail.photos : []
-
-      // 評價，如果評價不存在顯示'0'
-      d.rating = Boolean(Detail.rating) === true ? Detail.rating : '0'
-
-      // 營運狀態（CLOSED_TEMPORARILY 暫停營業；CLOSED_PERMANENTLY 永久停業）
-      d.business_status = Detail.business_status
-
-      // 營業時間
-      if (Detail.business_status === 'CLOSED_TEMPORARILY') {
-        d.opening_hours = '暫停營業'
-      } else if (Detail.business_status === 'CLOSED_PERMANENTLY') {
-        d.opening_hours = '永久停業'
-      } else if (Detail.opening_hours === undefined) {
-        d.opening_hours = '暫無營業時間資訊'
-      } else if (Boolean(Detail.opening_hours.weekday_text) === true) {
-        d.opening_hours = Detail.opening_hours.weekday_text.join('\n')
-      } else if (Boolean(Detail.opening_hours.weekday_text) === false) {
-        d.opening_hours = '暫無營業時間資訊'
-      }
-
-      // 地址資訊
-      d.formatted_address = Boolean(Detail.formatted_address) === true ? Detail.formatted_address : '暫無地址資訊'
-
-      // 電話資訊
-      // （.replace(/\s+/g, '') 取代數字間的空白，因 FLEX MESSAGE 電話按鈕的值，只能存在數字和少數的符號）
-      d.formatted_phone_number = Boolean(Detail.formatted_phone_number) === true ? Detail.formatted_phone_number.replace(/\s+/g, '') : '0'
-
-      return d
-    }))
-
-    const replies = RS.map(d => {
-      // google Place 回傳的資料中，取用經緯度，設為 X和Y
-      const X = d.geometry.location.lat
-      const Y = d.geometry.location.lng
-
-      d.distance = distance(X, Y, event.message.latitude, event.message.longitude, 'K')
-
-      return d
-    })
-
+    // ● 製作要回復的訊息
+    const replies = DMore
+      // 計算每個店家的距離
+      .map(D => {
+        // 宣告店家的經緯度
+        const Dlat = D.data.result.geometry.location.lat
+        const Dlng = D.data.result.geometry.location.lng
+        // 第二個 distanc 是引用 utils/distance.js，用來計算兩點距離的工具
+        D.data.result.distance = distance(Dlat, Dlng, userLat, userLng, 'k')
+        console.log('D', D)
+        return D
+      })
+      // 排序靠近使用者的店家在前
       .sort((a, b) => {
         return a.distance - b.distance
       })
+      .map(D => {
+        const T = template()
+        // 店家照片
+        // 先用 photo_reference 與 google APi 取照片
+        const DGPhoto = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${D.data.result.photos[0].photo_reference}&key=${myAPI}`
+        T.hero.url = DGPhoto || 'https://webcomkb.com/crazydomains/web-hosting/cd_web_hosting_404_not_found.png'
 
-      .slice(0, 5)
+        // 店家名稱
+        T.body.contents[0].text = D.data.result.name
+        // console.log('D.data.result.name', D.data.result.name)
 
-      .map(d => {
-        // 對照訊息模版，將值放入相對的位置
-        const t = template()
-
-        // 照片，沒有照片設置 https://webcomkb.com/crazydomains/web-hosting/cd_web_hosting_404_not_found.png
-        if (d.photos && d.photos.length > 0) {
-          t.hero.url = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${d.photos[0].photo_reference}&key=${API_KEY}`
-        } else { t.hero.url = 'https://webcomkb.com/crazydomains/web-hosting/cd_web_hosting_404_not_found.png' }
-
-        // 店名
-        t.body.contents[0].text = d.name
-
-        // 評價icon
-        t.body.contents[1].contents = rateToimg(d.rating)
-        // 評價函式計算要放幾個星星icon
-        function rateToimg() {
-          const stars = []
-          // 黃色星星數量
-          for (let i = 0; i < Math.round(d.rating); i++) {
-            stars.push({
-              type: 'icon',
-              size: 'sm',
-              url: 'https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png'
-            })
+        // 店家星等 rate
+        // 星等不是整數，故先直接四捨五入
+        const reD = Math.round(D.data.result.rating)
+        const calSatr = (el) => {
+          // 宣告陣列用來放黃星星和灰星星
+          // 陣列預先放置"星等數字"的位置，之後會用到
+          const DStar = [
+            {
+              type: 'text',
+              text: '4.0',
+              size: 'xxl',
+              color: '#999999',
+              margin: 'lg',
+              flex: 0,
+              weight: 'bold'
+            }
+          ]
+          const Ystar = {
+            type: 'icon',
+            size: 'sm',
+            url: 'https://developers-resource.landpress.line.me/fx/img/review_gold_star_28.png'
           }
-          // 灰色星星數量
-          for (let j = 0; j < (5 - Math.round(d.rating)); j++) {
-            stars.push({
-              type: 'icon',
-              size: 'sm',
-              url: 'https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png'
-            })
+          const Gstar = {
+            type: 'icon',
+            size: 'sm',
+            url: 'https://developers-resource.landpress.line.me/fx/img/review_gray_star_28.png'
           }
-          return stars
+          for (let j = 0; j < (5 - el); j++) {
+            // 灰星星的數量加入空陣列
+            DStar.unshift(Gstar)
+          }
+          for (let i = 0; i < el; i++) {
+            // 黃星星的數量加入空陣列
+            DStar.unshift(Ystar)
+          }
+          return DStar
         }
+        T.body.contents[1].contents = calSatr(reD)
 
         // 評價分數
-        t.body.contents[1].contents.push(
-          {
-            type: 'text',
-            text: `${d.rating}`,
-            size: 'xxl',
-            color: '#999999',
-            margin: 'lg',
-            flex: 0,
-            weight: 'bold'
+        // 因欄位資料類型是 text，故原 D.rating 是數字的資料類型需用 .toString() 專為文字
+        T.body.contents[1].contents[5].text = D.data.result.rating.toString()
+
+        // 營業時間，做個別設定
+        const Dstatus = D.data.result.business_status
+        const DOpening = (el) => {
+          if (el === 'OPERATIONAL') {
+            return {
+              type: 'text',
+              text: '營業中',
+              color: '#00A600',
+              size: 'sm',
+              flex: 1
+            }
+          } else if (el === 'CLOSED_TEMPORARILY') {
+            return {
+              type: 'text',
+              text: '暫停營業',
+              color: '#aaaaaa',
+              size: 'md',
+              flex: 1
+            }
+          } else if (el === 'CLOSED_PERMANENTLY') {
+            return {
+              type: 'text',
+              text: '永久停業',
+              color: '#FF0000',
+              size: 'md',
+              flex: 1
+            }
           }
-        )
-
-        // 營業時間
-        t.body.contents[2].contents[0].contents[1].text = d.opening_hours
-        if (d.opening_hours === '暫停營業' || d.opening_hours === '永久停業') {
-          t.body.contents[2].contents[0].contents[1].color = '#FF0000'
-          t.body.contents[2].contents[0].contents[1].size = 'md'
         }
+        T.body.contents[2].contents[0].contents[1] = DOpening(Dstatus)
 
-        // 地址
-        t.body.contents[2].contents[1].contents[1].text = d.formatted_address
+        // 店家地址
+        // 完整地址 D.plus_code.compound_code.slice(10) + D.vicinity
+        T.body.contents[2].contents[1].contents[1].text = D.data.result.vicinity
 
         // 按鈕撥打電話
-        t.footer.contents[0].contents[0].action.uri = `tel:${d.formatted_phone_number}`
-        // 當沒有電話資訊時，按鈕變成灰色
-        if (d.formatted_phone_number == 0) {
-          t.footer.contents[0].background.centerColor = '#808080'
-          t.footer.contents[0].background.startColor = '#808080'
-          t.footer.contents[0].background.endColor = '#808080'
+        // ★ line message 生成的 URI 符合格式要求，尤其是對於 tel: URI 需遵循以下格式：
+        // - 正確格式: tel: 1234567890
+        // - 錯誤格式: tel: 123 - 456 - 7890 或 tel: (123) 456 - 7890
+        console.log('D.data.result.formatted_phone_number', D.data.result.formatted_phone_number)
+        if (D.data.result.formatted_phone_number === undefined) {
+          D.data.result.formatted_phone_number = 0
+          T.footer.contents[0].background.centerColor = '#808080'
+          T.footer.contents[0].background.startColor = '#808080'
+          T.footer.contents[0].background.endColor = '#808080'
         }
+        T.footer.contents[0].contents[0].action.uri = `tel:${D.data.result.formatted_phone_number.replace(/\s+/g, '').slice(0, 10)}`
 
         // 更多資訊，連結至 google 商家網頁
-        t.footer.contents[1].contents[0].action.uri = `https://www.google.com/maps/search/?api=1&query=Google&query_place_id=${d.place_id}`
+        T.footer.contents[1].contents[0].action.uri = D.data.result.url
 
         // Map，引導路線地圖
-        t.footer.contents[2].contents[0].action.uri = `https://www.google.com/maps/dir/?api=1&destination=${d.geometry.location.lat},${d.geometry.location.lng}`
+        T.footer.contents[2].contents[0].action.uri = `https://www.google.com/maps/dir/?api=1&destination=${D.data.result.geometry.location.lat},${D.data.result.geometry.location.lng}`
 
-        return t
+        return T
       })
 
     const result = await event.reply({

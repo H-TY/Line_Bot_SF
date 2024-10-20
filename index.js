@@ -3,7 +3,6 @@ import linebot from 'linebot'
 import axios from 'axios'
 import commandGNS from './commands/googleNearbySearch.js'
 
-
 const bot = linebot({
   channelId: process.env.CHANNEL_ID,
   channelSecret: process.env.CHANNEL_SECRET,
@@ -16,6 +15,7 @@ bot.on('message', event => {
     console.log(event)
   }
   if (event.message.type === 'location') {
+    console.log('Line 有觸發')
     commandGNS(event)
   }
 })
